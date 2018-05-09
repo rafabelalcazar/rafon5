@@ -1,0 +1,66 @@
+/* Con este se trabaja de Geolocation-v4.1-usuario en adelante */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: rgb(0, 0, 0);
+}
+
+body {
+    background-position-x: center;
+    background-position-y: center;
+    background-image: url("../img/derechos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    position: fixed;
+    left: 25%;
+    bottom: 0%;
+    background-color: rgba(255,255,255,0.6);
+    padding-top: 2px solid #999;
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 10px;
+}
+
+/* ************** PANEL FLOTANTE 1 **************** */
+#conenedor {
+    position: absolute;
+    margin: center;
+    margin-top: 7%;
+    margin-left: 15%;
+    min-width: 70vw;
+    min-height: 70vh;
+    background-color: rgba(255, 196, 0, 0.3);
+    padding: 3%;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 10px;
+    line-height: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+div.barra-herramientas {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+div#volver-mapa {
+    cursor: pointer;
+}
+
+/* ************** LINKS **************** */
+a {
+    text-decoration: none;
+}
+a:focus,
+a:visited,
+a:active {
+    color: black;
+}
+a:hover {
+    color: orange;
+}

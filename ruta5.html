@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        .options-box {
+            background: white;
+            border: 1px solid #999;
+            border-radius: 5px;
+            flex-flow: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div class="options-box">
+        <label for="#show-ruta5">Mostrar ruta</label>
+        <input id="show-ruta5" type="checkbox" value="RUTA5-TL">
+        <!-- <input id="hide-ruta5" type="button" value="ocultar"> -->
+    </div>
+    <script>
+        var map;
+        var markers = [];
+        function initMap() {
+            // Constructor creates a new map - only center and zoom are required.
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 2.446803, lng: -76.606770 },
+                zoom: 14
+            });
+
+            var ruta5 = [
+                { title: 'Valle del ortigal', location: { lat: 2.4601901, lng: -76.6396848 } },
+                { title: 'Los Naranjos', location: { lat: 2.4608432, lng: -76.6374379 } },
+                { title: 'CAI-Maria Occ', location: { lat: 2.458642, lng: -76.633914 } },
+                { title: 'Carlos Primero', location: { lat: 2.4535943, lng: -76.6307486 } },
+                { title: 'Colegio Jose Eusebio C', location: { lat: 2.4527511, lng: -76.6319993 } },
+                { title: 'Chune', location: { lat: 2.4499034, lng: -76.6252838 } }
+            ];
+
+            var largeInfowindow = new google.maps.InfoWindow();
+
+            var bounds = new google.maps.LatLngBounds();
+
+
+
+            for (var i = 0; i < ruta5.length; i++) {
+                var position = ruta5[i].location;
+                var title = ruta5[i].title;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: position,
+                    title: title,
+                    animation: google.maps.Animation.DROP,//BOUNCE
+                    id: i
+                });
+                // Colocar los marcadores a nuestro array de marcadores
+                markers.push(marker);
+
+                bounds.extend(marker.position);
+                // Crear un evento onclick para abrir el infoWindow patos
+                marker.addListener('click', function () {
+                    populateInfoWindow(this, largeInfowindow);
+                });
+
+                map.fitBounds(bounds);
+                document.getElementById('show-ruta5').addEventListener('toogle', showListings);
+                // document.getElementById('show-ruta5').addEventListener('click', hideListings);
+
+                // document.getElementById('show-ruta5').addListener('click', hideListings);
+
+                markers.push(marker);
+                marker.addListener('click', function () {
+                    populateInfoWindow(this, largeInfowindow);
+                });
+            }
+
+            function populateInfoWindow(marker, infowindow) {
+                if (infowindow.marker != marker) {
+                    infowindow.marker = marker;
+                    infowindow.setContent('<div>' + marker.title + '</div>');
+                    infowindow.open(map, marker);
+
+                    infowindow.addListener('closeclick', function () {
+                        infowindow.setMarker(null);
+                    });
+                }
+            }
+
+            function showListings() {
+                if (show-ruta5.checked) {
+                    var bounds = new google.maps.LatLngBounds();
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(map);
+                        bounds.extend(markers[i].position);
+                    }
+                    map.fitBounds(bounds);
+                }
+                else {
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(null);
+                    }
+                }
+
+            }    
+
+
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDofv40C3A72DWtGGWNr3abXR0uA3p5KP4&v=3&callback=initMap">
+    </script>
+
+</body>
+
+</html>

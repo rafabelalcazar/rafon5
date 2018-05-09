@@ -1,0 +1,167 @@
+/* Con este se trabaja de Geolocation v3.3 en adelante*/
+
+#map {
+    height: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+footer {
+    position: fixed;
+    left: 25%;
+    bottom: 0%;
+    background-color: rgba(255,255,255,0.6);
+    padding-top: 2px solid #999;
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 10px;
+}
+
+/* ************** PANEL FLOTANTE 1 **************** */
+#floating-panel-1 {
+    position: absolute;
+    top: 2%;
+    left: 75%;
+    right: 1%;
+    max-width: 95%;
+    max-height: 95vh;
+    min-height: 70vh;
+    z-index: 5;
+    background-color: rgba(255,255,255,0.6);
+    padding: 5px;
+    padding-bottom: 15px;
+    border: 2px solid rgb(153, 153, 153);
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 10px;
+    line-height: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+#floating-panel-1 {
+    margin-left: -52px;
+    display: block;
+    overflow: auto;
+}
+/* ************** SESIÓN ACTIVA **************** */
+div#barra-herramientas {
+    position: absolute;
+    top: 1%;
+    left: 3%;
+}
+
+/* ************** CERRAR SESIÓN **************** */
+div#cerrar-sesion {
+    position: absolute;
+    top: 1%;
+    right: 3%;
+}
+
+/* ************** LINKS **************** */
+a {
+    text-decoration: none;
+}
+a:focus,
+a:visited,
+a:active {
+    color: black;
+}
+a:hover {
+    color: orange;
+}
+
+/* ************** PANEL FLOTANTE 2 **************** */
+#floating-panel-2 {
+    position: absolute;
+    top: 13%;
+    left: 1%;
+    z-index: 5;
+    width: 21vw;
+    /*height: 60vh;*/
+    max-height: 80vh;
+    min-height: 30vh;
+    background-color: rgba(238, 177, 46, 0.3);
+    padding: 5px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 10px;
+    line-height: 10px;
+    /*padding-left: 10px;*/
+    box-sizing: border-box;
+}
+
+#floating-panel-2 {
+    margin-right: -52px;
+    display: block;
+    overflow: auto;
+}
+div#encabezado-fp2 {
+    position: fixed;
+    display: block;
+    margin: 0% 6%;
+}
+div#panel-fp2 {
+    padding-top: 27%;
+}
+
+
+/* ************** PANEL GEESTION RUTAS **************** */
+/*#gestion-rutas {
+    position: absolute;
+    display: none;
+    top: 20%;
+    left: 33%;
+    z-index: 6;
+    width: 30vw;*/
+    /*height: 60vh;*/
+    /*max-height: 60vh;
+    min-height: 40vh;
+    background-color: rgba(25, 198, 228, 0.3);
+    padding: 5px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    font-size: 12px;
+    line-height: 10px;*/
+    /*padding-left: 10px;*/
+    /*box-sizing: border-box;
+}
+#gestion-rutas label{
+    font-weight: bold;
+}*/
+
+/* ************** DIV CONTENEDOR RUTAS **************** */
+#contenedor-rutas table, td{
+    border-top: 1px solid rgba(4, 66, 42, 0.1);
+    border-bottom: 1px solid rgba(4, 66, 42, 0.1);
+}
+#contenedor-rutas.table thead, th{
+    font-variant: small-caps;
+}
+#contenedor-rutas table, th{
+    border-top: 1px solid rgba(4, 66, 42, 0.1);
+    border-bottom: 1px solid rgba(4, 66, 42, 0.1);
+}
+.tabla td{
+    height: 30px;
+    text-align: left;
+}
+.tabla caption{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* ************** ELEMENTOS **************** */
+.infoWindow{
+    font-family: 'Roboto', 'Times New Roman', 'sans-serif';
+    /*font-style: italic;*/
+    font-size: 12px;
+    line-height: 5px;
+    padding-left: 10px;
+    min-height: 100px;
+}
